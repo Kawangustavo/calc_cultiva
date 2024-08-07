@@ -85,6 +85,8 @@ body {
     font-weight: bold;
     text-align: center; /* Centraliza o texto */
     color: #333; /* Cor do texto para melhor contraste */
+    position: absolute;
+    bottom: 0;
 }
 
 @media (max-width: 1200px) {
