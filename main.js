@@ -50,7 +50,7 @@ const naoAtingidos = nomesParametros.filter((_, index) => !parametros[index]);
 // Função para classificar a fertilidade
 function classificarFertilidade(numeroDeParametrosAtingidos) {
     if (numeroDeParametrosAtingidos === 7) {
-        return 'Muito fertil';
+        return 'Muito-fertil';
     } else if (numeroDeParametrosAtingidos >= 5) {
         return 'Fertil';
     } else if (numeroDeParametrosAtingidos >= 2) {
