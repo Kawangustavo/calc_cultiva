@@ -110,6 +110,18 @@ body {
     color: red; /* Vermelho para "Não atingido" */
 }
 
+.fertilidade-fertil {
+    color: green; /* Verde para "Fertil" */
+}
+
+.fertilidade-mediano {
+    color: yellow; /* Amarelo para "Mediano" */
+}
+
+.fertilidade-infertil {
+    color: red; /* Vermelho para "Infertil" */
+}
+
 @media (max-width: 1200px) {
     .navbar {
         padding: 10px 2rem; /* Adjust padding for smaller screens */

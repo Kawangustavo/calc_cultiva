@@ -66,29 +66,31 @@ const fertilidade = classificarFertilidade(parametrosAtingidos);
 const resultadoUl = document.getElementById('resultado');
     resultadoUl.innerHTML = ''; // Limpar resultados anteriores
 
-    // Adicionar resultado de fertilidade
-    const liFertilidade = document.createElement('li');
-    liFertilidade.textContent = `Fertilidade: ${fertilidade}`;
-    resultadoUl.appendChild(liFertilidade);
-
-    // Adicionar cada parâmetro como item de lista
-    nomesParametros.forEach((nome, index) => {
-        const liParametro = document.createElement('li');
-        liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Insuficiente'}`;
-        liParametro.className = parametros[index] ? 'atingido' : 'nao-atingido';
-        resultadoUl.appendChild(liParametro);
-    });
-
-    // Adicionar parâmetros não atingidos
-    if (naoAtingidos.length > 0) {
-        const liNaoAtingidos = document.createElement('li');
-        liNaoAtingidos.textContent = `Parâmetros não atingidos: ${naoAtingidos.join(', ')}`;
-        resultadoUl.appendChild(liNaoAtingidos);
-    } else {
-        const liTodosAtingidos = document.createElement('li');
-        liTodosAtingidos.textContent = 'Todos os parâmetros foram atingidos.';
-        resultadoUl.appendChild(liTodosAtingidos);
-    }
+       // Adicionar resultado de fertilidade
+       const liFertilidade = document.createElement('li');
+       liFertilidade.textContent = `Fertilidade: ${fertilidade}`;
+       liFertilidade.className = `fertilidade-${fertilidade}`;
+       resultadoUl.appendChild(liFertilidade);
+   
+       // Adicionar cada parâmetro como item de lista
+       nomesParametros.forEach((nome, index) => {
+           const liParametro = document.createElement('li');
+           liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Não atingido'}`;
+           liParametro.className = parametros[index] ? 'atingido' : 'nao-atingido';
+           resultadoUl.appendChild(liParametro);
+       });
+   
+       // Adicionar parâmetros não atingidos
+       if (naoAtingidos.length > 0) {
+           const liNaoAtingidos = document.createElement('li');
+           liNaoAtingidos.textContent = `Parâmetros não atingidos: ${naoAtingidos.join(', ')}`;
+           resultadoUl.appendChild(liNaoAtingidos);
+       } else {
+           const liTodosAtingidos = document.createElement('li');
+           liTodosAtingidos.textContent = 'Todos os parâmetros foram atingidos.';
+           resultadoUl.appendChild(liTodosAtingidos);
+       }
+   
 
     document.getElementById('nitrogenio').value = '';
     document.getElementById('fosforo').value = '';
