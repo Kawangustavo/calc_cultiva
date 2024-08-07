@@ -87,3 +87,53 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
+
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 10px 2rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 1rem; /* Further adjust padding */
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        gap: 1rem; /* Reduced gap */
+    }
+
+    .umidade-centralizada {
+        grid-column: 1; /* Full width on smaller screens */
+        grid-row: auto; /* Reset row for better layout */
+    }
+
+    .button {
+        font-size: 1em; /* Smaller button text on smaller screens */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    .calculator {
+        margin-top: 60px; /* Adjust margin-top for fixed navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar img {
+        height: 4rem; /* Smaller logo on very small screens */
+    }
+
+    .button {
+        font-size: 0.9em; /* Even smaller button text */
+        padding: 6px 12px; /* Adjust button padding */
+    }
+
+    .calculator h1 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    .grid input {
+        padding: 8px; /* Smaller input padding */
+    }
+}
