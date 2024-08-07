@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de Fertilidade</title>
+</head>
+<body>
+  <div class="navbar">
+    <img src="/images/logo.svg" alt="Logo"> 
+</div>
+
+    <div class="calculator">
+        <h1>Calculadora de Fertilidade</h1>
+        <div class="grid">
+            <div>
+                <input type="number" id="nitrogenio" placeholder="Insira o valor aqui:">
+                <label for="nitrogenio">Nitrogênio</label>
+            </div>
+            <div>
+                <input type="nunber" id="fosforo" placeholder="Insira o valor aqui:">
+                <label for="fosforo">Fósforo</label>
+            </div>
+            <div>
+                <input type="number" id="potassio" placeholder="Insira o valor aqui:">
+                <label for="potassio">Potássio</label>
+            </div>
+            <div>
+                <input type="number" id="eletrocondutividade" placeholder="Insira o valor aqui:">
+                <label for="eletrocondutividade">Eletrocondutividade</label>
+            </div>
+            <div>
+                <input type="numner" id="ph" placeholder="Insira o valor aqui:">
+                <label for="ph">pH</label>
+            </div>
+            <div>
+                <input type="number" id="temperatura" placeholder="Insira o valor aqui:">
+                <label for="temperatura">Temperatura</label>
+            </div>
+            <div class="umidade-centralizada">
+                <input type="number" id="umidade" placeholder="Insira o valor aqui:">
+                <label for="umidade">Umidade</label>
+            </div>
+        </div>
+        <button class="button" id="calcular">Calcular:</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
