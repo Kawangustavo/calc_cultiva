@@ -63,14 +63,24 @@ function classificarFertilidade(numeroDeParametrosAtingidos) {
 // Classificar a fertilidade com base no número de parâmetros atingidos
 const fertilidade = classificarFertilidade(parametrosAtingidos);
 
-// Exibir o resultado no console
-const resultadoDiv = document.getElementById('resultado');
-if (naoAtingidos.length > 0) {
-    resultadoDiv.innerHTML = `Fertilidade: ${fertilidade}. Parâmetros não atingidos: ${naoAtingidos.join(', ')}.`;
-} else {
-    resultadoDiv.innerHTML = `Fertilidade: ${fertilidade}. Todos os parâmetros foram atingidos.`;
-}
+const resultadoUl = document.getElementById('resultado');
+    resultadoUl.innerHTML = ''; // Limpar resultados anteriores
 
+    // Adicionar resultado de fertilidade
+    const liFertilidade = document.createElement('li');
+    liFertilidade.textContent = `Fertilidade: ${fertilidade}`;
+    resultadoUl.appendChild(liFertilidade);
+
+    // Adicionar parâmetros não atingidos
+    if (naoAtingidos.length > 0) {
+        const liNaoAtingidos = document.createElement('li');
+        liNaoAtingidos.textContent = `Parâmetros não atingidos: ${naoAtingidos.join(', ')}`;
+        resultadoUl.appendChild(liNaoAtingidos);
+    } else {
+        const liTodosAtingidos = document.createElement('li');
+        liTodosAtingidos.textContent = 'Todos os parâmetros foram atingidos.';
+        resultadoUl.appendChild(liTodosAtingidos);
+    }
 
     document.getElementById('nitrogenio').value = '';
     document.getElementById('fosforo').value = '';
