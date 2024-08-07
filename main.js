@@ -69,7 +69,7 @@ const resultadoUl = document.getElementById('resultado');
           
     // Adicionar resultado de fertilidade
     const liFertilidade = document.createElement('li');
-    liFertilidade.innerHTML = `Fertilidade: <span class="fertilidade ${fertilidade}">${fertilidade}</span>`;
+    liFertilidade.innerHTML = `Fertilidade: <span class="fertilidade- ${fertilidade}">${fertilidade}</span>`;
     liFertilidade.classList.add('hidden');
     resultadoUl.appendChild(liFertilidade);
 
