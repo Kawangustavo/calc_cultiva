@@ -1,5 +1,5 @@
-document.getElementById('calcular').addEventListener('click', function() {
-    // Coletar os valores dos inputs
+document.getElementById('calcForm').addEventListener('submit', function(event) {
+    event.preventDefault();
     const nitrogenio = parseFloat(document.getElementById('nitrogenio').value);
     const fosforo = parseFloat(document.getElementById('fosforo').value);
     const potassio = parseFloat(document.getElementById('potassio').value);
