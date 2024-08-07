@@ -66,9 +66,11 @@ const fertilidade = classificarFertilidade(parametrosAtingidos);
 const resultadoUl = document.getElementById('resultado');
     resultadoUl.innerHTML = ''; // Limpar resultados anteriores
 
-          // Adicionar resultado de fertilidade
+          
+    // Adicionar resultado de fertilidade
     const liFertilidade = document.createElement('li');
-    liFertilidade.innerHTML = `Fertilidade: <span class="fertilidade-${fertilidade}">${fertilidade}</span>`;
+    liFertilidade.innerHTML = `Fertilidade: <span class="fertilidade ${fertilidade}">${fertilidade}</span>`;
+    liFertilidade.classList.add('hidden');
     resultadoUl.appendChild(liFertilidade);
 
     // Adicionar cada parâmetro como item de lista
@@ -76,6 +78,7 @@ const resultadoUl = document.getElementById('resultado');
         const liParametro = document.createElement('li');
         liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Não atingido'}`;
         liParametro.className = parametros[index] ? 'atingido' : 'nao-atingido';
+        liParametro.classList.add('hidden');
         resultadoUl.appendChild(liParametro);
     });
 
@@ -83,12 +86,28 @@ const resultadoUl = document.getElementById('resultado');
     if (naoAtingidos.length > 0) {
         const liNaoAtingidos = document.createElement('li');
         liNaoAtingidos.textContent = `Parâmetros não atingidos: ${naoAtingidos.join(', ')}`;
+        liNaoAtingidos.classList.add('hidden');
         resultadoUl.appendChild(liNaoAtingidos);
     } else {
         const liTodosAtingidos = document.createElement('li');
         liTodosAtingidos.textContent = 'Todos os parâmetros foram atingidos.';
+        liTodosAtingidos.classList.add('hidden');
         resultadoUl.appendChild(liTodosAtingidos);
     }
+
+    // Iniciar a animação para mostrar os itens um por um
+    let delay = 0;
+    const items = resultadoUl.querySelectorAll('li');
+
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.remove('hidden');
+            item.classList.add('visible');
+        }, delay);
+
+        // Aumentar o delay para o próximo item
+        delay += 500; // 500ms de intervalo entre os itens
+    });
 
     document.getElementById('nitrogenio').value = '';
     document.getElementById('fosforo').value = '';
