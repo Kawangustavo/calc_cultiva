@@ -71,6 +71,13 @@ const resultadoUl = document.getElementById('resultado');
     liFertilidade.textContent = `Fertilidade: ${fertilidade}`;
     resultadoUl.appendChild(liFertilidade);
 
+    // Adicionar cada parâmetro como item de lista
+    nomesParametros.forEach((nome, index) => {
+        const liParametro = document.createElement('li');
+        liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Não atingido'}`;
+        resultadoUl.appendChild(liParametro);
+    });
+
     // Adicionar parâmetros não atingidos
     if (naoAtingidos.length > 0) {
         const liNaoAtingidos = document.createElement('li');
