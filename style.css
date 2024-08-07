@@ -1,13 +1,14 @@
 .hidden {
     opacity: 0;
     transform: translateX(-100%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 250ms ease, transform 250ms ease;
 }
 
 /* Classe para mostrar o elemento com animação de deslizar */
 .visible {
     opacity: 1;
     transform: translateX(0);
+    transition: ease-in-out 250ms;
 }
 
 body {
