@@ -79,7 +79,7 @@ body {
     background-color: #0056b3;
 }
 
-#result {
+#resultado {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
@@ -87,13 +87,13 @@ body {
     color: #333; /* Cor do texto para melhor contraste */
 }
 
-#result ul {
+#resultado ul {
     list-style-type: none; /* Remove bullets */
     padding: 0;
     margin: 0;
 }
 
-#result li {
+#resultado li {
     margin: 5px 0; /* Space between items */
     font-size: 16px; /* Adjust font size */
 }
