@@ -86,6 +86,7 @@ body {
 #resultado {
     font-size: 5rem;
     font-weight: bold;
+    margin-top: 2rem;
 }
 
 @media (max-width: 1200px) {

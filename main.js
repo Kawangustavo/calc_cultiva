@@ -9,10 +9,10 @@ document.getElementById('calcular').addEventListener('click', function() {
     const umidade = parseFloat(document.getElementById('umidade').value);
     const resultado = parseFloat(document.getElementById('resultado'));
 
-    if (isNaN(nitrogenio) || isNaN(fosforo) || isNaN(potassio) || isNaN(eletrocondutividade) || isNaN(ph) || isNaN(temperatura) || isNaN(umidade)) {
-        alert('Por favor, preencha todos os campos corretamente.');
-        return;
-    }
+    //if (isNaN(nitrogenio) || isNaN(fosforo) || isNaN(potassio) || isNaN(eletrocondutividade) || isNaN(ph) || isNaN(temperatura) || isNaN(umidade)) {
+      //  alert('Por favor, preencha todos os campos corretamente.');
+        //return;
+   // }
 
 console.log(resultado)
 
@@ -64,12 +64,13 @@ function classificarFertilidade(numeroDeParametrosAtingidos) {
 const fertilidade = classificarFertilidade(parametrosAtingidos);
 
 // Exibir o resultado no console
-console.log('Fertilidade:', fertilidade);
+    const resultadoDiv = document.getElementById('resultado');
 if (naoAtingidos.length > 0) {
-    console.log('Parâmetros não atingidos:', naoAtingidos.join(', '));
+    resultadoDiv.innerHTML = `Fertilidade: ${fertilidade}. Parâmetros não atingidos: ${naoAtingidos.join(', ')}.`;
 } else {
-    console.log('Todos os parâmetros foram atingidos.');
+    resultadoDiv.innerHTML = `Fertilidade: ${fertilidade}. Todos os parâmetros foram atingidos.`;
 }
+
 
     document.getElementById('nitrogenio').value = '';
     document.getElementById('fosforo').value = '';
