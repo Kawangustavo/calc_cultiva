@@ -52,7 +52,7 @@ function classificarFertilidade(numeroDeParametrosAtingidos) {
     if (numeroDeParametrosAtingidos === 7) {
         return 'Muito fertil';
     } else if (numeroDeParametrosAtingidos >= 5) {
-        return 'fertil';
+        return 'Fertil';
     } else if (numeroDeParametrosAtingidos >= 2) {
         return 'Mediana';
     } else {
