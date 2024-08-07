@@ -1,5 +1,5 @@
-document.getElementById('calcForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById('calcular').addEventListener('click', function() {
+    // Coletar os valores dos inputs
     const nitrogenio = parseFloat(document.getElementById('nitrogenio').value);
     const fosforo = parseFloat(document.getElementById('fosforo').value);
     const potassio = parseFloat(document.getElementById('potassio').value);
@@ -64,7 +64,7 @@ function classificarFertilidade(numeroDeParametrosAtingidos) {
 const fertilidade = classificarFertilidade(parametrosAtingidos);
 
 // Exibir o resultado no console
-    const resultadoDiv = document.getElementById('resultado');
+const resultadoDiv = document.getElementById('resultado');
 if (naoAtingidos.length > 0) {
     resultadoDiv.innerHTML = `Fertilidade: ${fertilidade}. Parâmetros não atingidos: ${naoAtingidos.join(', ')}.`;
 } else {
