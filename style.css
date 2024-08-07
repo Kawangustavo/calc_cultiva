@@ -1,5 +1,5 @@
 body {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -34,6 +34,8 @@ body {
 
 .calculator {
     text-align: center;
+    padding: 5rem;
+    margin: 1.2rem;
 }
 .calculator h1 {
     margin-bottom: 20px;
@@ -86,6 +88,7 @@ body {
     font-weight: bold;
     text-align: center; /* Centraliza o texto */
     color: #333; /* Cor do texto para melhor contraste */
+    padding-bottom: 3rem;
 }
 
 .result ul {
