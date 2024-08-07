@@ -110,16 +110,20 @@ body {
     color: red; /* Vermelho para "Não atingido" */
 }
 
+.fertilidade-muito-fertil {
+    color: #0000ff; /* Azul para "Muito fértil" */
+}
+
 .fertilidade-fertil {
-    color: green; /* Verde para "Fertil" */
+    color: #008000; /* Verde para "Fertil" */
 }
 
 .fertilidade-mediano {
-    color: yellow; /* Amarelo para "Mediano" */
+    color: #ffff00; /* Amarelo para "Mediano" */
 }
 
 .fertilidade-infertil {
-    color: red; /* Vermelho para "Infertil" */
+    color: #ff0000; /* Vermelho para "Infertil" */
 }
 
 @media (max-width: 1200px) {
