@@ -112,18 +112,22 @@ body {
 
 .fertilidade-muito-fertil {
     color: #0000ff; /* Azul para "Muito fértil" */
+    font-size: 1.2rem;
 }
 
 .fertilidade-fertil {
     color: #008000; /* Verde para "Fertil" */
+    font-size: 1.2rem;
 }
 
 .fertilidade-mediano {
     color: #ffff00; /* Amarelo para "Mediano" */
+    font-size: 1.2rem;
 }
 
 span.fertilidade-Infertil {
     color: #ff0000; /* Vermelho para "Infertil" */
+    font-size: 1.2rem;
 }
 
 @media (max-width: 1200px) {
