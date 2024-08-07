@@ -110,7 +110,7 @@ body {
     color: red; /* Vermelho para "Não atingido" */
 }
 
-span.fertilidade-Muito-Fertil {
+span.fertilidade-Muito-fertil {
     color: #0000ff; /* Azul para "Muito fértil" */
     font-size: 1.2rem;
 }
