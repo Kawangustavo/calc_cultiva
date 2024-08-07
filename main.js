@@ -50,13 +50,13 @@ const naoAtingidos = nomesParametros.filter((_, index) => !parametros[index]);
 // Função para classificar a fertilidade
 function classificarFertilidade(numeroDeParametrosAtingidos) {
     if (numeroDeParametrosAtingidos === 7) {
-        return 'muitofertil';
+        return 'Muito fertil';
     } else if (numeroDeParametrosAtingidos >= 5) {
         return 'fertil';
     } else if (numeroDeParametrosAtingidos >= 2) {
-        return 'mediano';
+        return 'Mediana';
     } else {
-        return 'infertil';
+        return 'Infertil';
     }
 }
 
@@ -74,7 +74,7 @@ const resultadoUl = document.getElementById('resultado');
     // Adicionar cada parâmetro como item de lista
     nomesParametros.forEach((nome, index) => {
         const liParametro = document.createElement('li');
-        liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Não atingido'}`;
+        liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Insuficiente'}`;
         liParametro.className = parametros[index] ? 'atingido' : 'nao-atingido';
         resultadoUl.appendChild(liParametro);
     });
