@@ -103,25 +103,25 @@ body {
 }
 
 .atingido {
-    color: green; /* Verde para "Atingido" */
+    color: #04c104; /* Verde para "Atingido" */
 }
 
 .nao-atingido {
-    color: red; /* Vermelho para "Não atingido" */
+    color: #be0606; /* Vermelho para "Não atingido" */
 }
 
 span.fertilidade-Muito-fertil {
-    color: #0000ff; /* Azul para "Muito fértil" */
+    color: #1e1ed5; /* Azul para "Muito fértil" */
     font-size: 1.2rem;
 }
 
 span.fertilidade-Fertil {
-    color: #008000; /* Verde para "Fertil" */
+    color: #04c104; /* Verde para "Fertil" */
     font-size: 1.2rem;
 }
 
 span.fertilidade-Mediana {
-    color: #ffff00; /* Amarelo para "Mediano" */
+    color: #efef16; /* Amarelo para "Mediano" */
     font-size: 1.2rem;
 }
 
