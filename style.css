@@ -79,14 +79,12 @@ body {
     background-color: #0056b3;
 }
 
-.result {
+#result {
     margin-top: 20px;
-}
-
-#resultado {
-    font-size: 5rem;
+    font-size: 18px;
     font-weight: bold;
-    margin-top: 2rem;
+    text-align: center; /* Centraliza o texto */
+    color: #333; /* Cor do texto para melhor contraste */
 }
 
 @media (max-width: 1200px) {
