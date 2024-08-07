@@ -7,11 +7,14 @@ document.getElementById('calcular').addEventListener('click', function() {
     const ph = parseFloat(document.getElementById('ph').value);
     const temperatura = parseFloat(document.getElementById('temperatura').value);
     const umidade = parseFloat(document.getElementById('umidade').value);
+    const resultado = parseFloat(document.getElementById('resultado'));
 
     if (isNaN(nitrogenio) || isNaN(fosforo) || isNaN(potassio) || isNaN(eletrocondutividade) || isNaN(ph) || isNaN(temperatura) || isNaN(umidade)) {
         alert('Por favor, preencha todos os campos corretamente.');
         return;
     }
+
+console.log(resultado)
 
 // Função para verificar se o valor é maior que 100
 function verificarValor(valor) {
