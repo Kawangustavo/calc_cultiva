@@ -10,7 +10,7 @@ document.getElementById('calcular').addEventListener('click', function() {
 
     document.getElementById('download').addEventListener('click', function() {
            const link = document.createElement('a');
-           link.href = '/MRV.pdf';
+           link.href = '/images/MRV.pdf';
            link.download = 'MRV.pdf';
            document.body.appendChild(link);
            link.click();
