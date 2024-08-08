@@ -8,15 +8,6 @@ document.getElementById('calcular').addEventListener('click', function() {
     const umidade = parseFloat(document.getElementById('umidade').value);
     const resultado = parseFloat(document.getElementById('resultado'));
 
-    document.getElementById('download').addEventListener('click', function() {
-           const link = document.createElement('a');
-           link.href = '/images/MRV.pdf';
-           link.download = 'MRV.pdf';
-           document.body.appendChild(link);
-           link.click();
-           document.body.removeChild(link);
-       });
-
     if (isNaN(nitrogenio) || isNaN(fosforo) || isNaN(potassio) || isNaN(eletrocondutividade) || isNaN(ph) || isNaN(temperatura) || isNaN(umidade)) {
        alert('Por favor, preencha todos os campos corretamente.');
         return;
