@@ -1,5 +1,4 @@
 document.getElementById('calcular').addEventListener('click', function() {
-    // Coletar os valores dos inputs
     const nitrogenio = parseFloat(document.getElementById('nitrogenio').value);
     const fosforo = parseFloat(document.getElementById('fosforo').value);
     const potassio = parseFloat(document.getElementById('potassio').value);
@@ -9,27 +8,57 @@ document.getElementById('calcular').addEventListener('click', function() {
     const umidade = parseFloat(document.getElementById('umidade').value);
     const resultado = parseFloat(document.getElementById('resultado'));
 
-    //if (isNaN(nitrogenio) || isNaN(fosforo) || isNaN(potassio) || isNaN(eletrocondutividade) || isNaN(ph) || isNaN(temperatura) || isNaN(umidade)) {
-      //  alert('Por favor, preencha todos os campos corretamente.');
-        //return;
-   // }
+    document.getElementById('download').addEventListener('click', function() {
+           const link = document.createElement('a');
+           link.href = './MRV.pdf';
+           link.download = 'MRV.pdf';
+           document.body.appendChild(link);
+           link.click();
+           document.body.removeChild(link);
+       });
 
-console.log(resultado)
+    if (isNaN(nitrogenio) || isNaN(fosforo) || isNaN(potassio) || isNaN(eletrocondutividade) || isNaN(ph) || isNaN(temperatura) || isNaN(umidade)) {
+       alert('Por favor, preencha todos os campos corretamente.');
+        return;
+    }
 
-// Função para verificar se o valor é maior que 100
-function verificarValor(valor) {
-    return valor > 100;
+ function verificarNitrogenio(valor) {
+    return valor >= 500 && valor <= 2000; 
+}
+
+function verificarFosforo(valor) {
+    return valor >= 10 && valor <= 50; 
+}
+
+function verificarPotassio(valor) {
+    return valor >= 100 && valor <= 300;
+}
+
+function verificarEletrocondutividade(valor) {
+    return valor >= 150 && valor <= 1000;
+}
+
+function verificarPh(valor) {
+    return valor >= 6.0 && valor <= 7.0; 
+}
+
+function verificarTemperatura(valor) {
+    return valor >= 15 && valor <= 30; 
+}
+
+function verificarUmidade(valor) {
+    return valor >= 20 && valor <= 80; 
 }
 
 // Parâmetros de entrada
 const parametros = [
-    verificarValor(nitrogenio),
-    verificarValor(fosforo),
-    verificarValor(potassio),
-    verificarValor(eletrocondutividade),
-    verificarValor(ph),
-    verificarValor(temperatura),
-    verificarValor(umidade)
+    verificarNitrogenio(nitrogenio),
+    verificarFosforo(fosforo),
+    verificarPotassio(potassio),
+    verificarEletrocondutividade(eletrocondutividade),
+    verificarPh(ph),
+    verificarTemperatura(temperatura),
+    verificarUmidade(umidade)
 ];
 
 // Nomes dos parâmetros
@@ -43,11 +72,9 @@ const nomesParametros = [
     'Umidade'
 ];
 
-// Contar quantos parâmetros foram atingidos e identificar os não atingidos
 const parametrosAtingidos = parametros.filter(Boolean).length;
 const naoAtingidos = nomesParametros.filter((_, index) => !parametros[index]);
 
-// Função para classificar a fertilidade
 function classificarFertilidade(numeroDeParametrosAtingidos) {
     if (numeroDeParametrosAtingidos === 7) {
         return 'Muito-fertil';
@@ -60,61 +87,54 @@ function classificarFertilidade(numeroDeParametrosAtingidos) {
     }
 }
 
-// Classificar a fertilidade com base no número de parâmetros atingidos
 const fertilidade = classificarFertilidade(parametrosAtingidos);
 
 const resultadoUl = document.getElementById('resultado');
-    resultadoUl.innerHTML = ''; // Limpar resultados anteriores
+resultadoUl.innerHTML = ''; 
 
-          
-    // Adicionar resultado de fertilidade
-    const liFertilidade = document.createElement('li');
-    liFertilidade.innerHTML = `Fertilidade: <span class="fertilidade-${fertilidade}">${fertilidade}</span>`;
-    liFertilidade.classList.add('hidden');
-    resultadoUl.appendChild(liFertilidade);
+const liFertilidade = document.createElement('li');
+liFertilidade.innerHTML = `Fertilidade: <span class="fertilidade-${fertilidade}">${fertilidade}</span>`;
+liFertilidade.classList.add('hidden');
+resultadoUl.appendChild(liFertilidade);
 
-    // Adicionar cada parâmetro como item de lista
-    nomesParametros.forEach((nome, index) => {
-        const liParametro = document.createElement('li');
-        liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Não atingido'}`;
-        liParametro.className = parametros[index] ? 'atingido' : 'nao-atingido';
-        liParametro.classList.add('hidden');
-        resultadoUl.appendChild(liParametro);
-    });
+nomesParametros.forEach((nome, index) => {
+    const liParametro = document.createElement('li');
+    liParametro.textContent = `${nome}: ${parametros[index] ? 'Atingido' : 'Não atingido'}`;
+    liParametro.className = parametros[index] ? 'atingido' : 'nao-atingido';
+    liParametro.classList.add('hidden');
+    resultadoUl.appendChild(liParametro);
+});
 
-    // Adicionar parâmetros não atingidos
-    if (naoAtingidos.length > 0) {
-        const liNaoAtingidos = document.createElement('li');
-        liNaoAtingidos.textContent = `Parâmetros não atingidos: ${naoAtingidos.join(', ')}`;
-        liNaoAtingidos.classList.add('hidden');
-        resultadoUl.appendChild(liNaoAtingidos);
-    } else {
-        const liTodosAtingidos = document.createElement('li');
-        liTodosAtingidos.textContent = 'Todos os parâmetros foram atingidos.';
-        liTodosAtingidos.classList.add('hidden');
-        resultadoUl.appendChild(liTodosAtingidos);
-    }
+if (naoAtingidos.length > 0) {
+    const liNaoAtingidos = document.createElement('li');
+    liNaoAtingidos.textContent = `Parâmetros não atingidos: ${naoAtingidos.join(', ')}`;
+    liNaoAtingidos.classList.add('hidden');
+    resultadoUl.appendChild(liNaoAtingidos);
+} else {
+    const liTodosAtingidos = document.createElement('li');
+    liTodosAtingidos.textContent = 'Todos os parâmetros foram atingidos.';
+    liTodosAtingidos.classList.add('hidden');
+    resultadoUl.appendChild(liTodosAtingidos);
+}
 
-    // Iniciar a animação para mostrar os itens um por um
-    let delay = 0;
-    const items = resultadoUl.querySelectorAll('li');
+let delay = 0;
+const items = resultadoUl.querySelectorAll('li');
 
-    items.forEach((item, index) => {
-        setTimeout(() => {
-            item.classList.remove('hidden');
-            item.classList.add('visible');
-        }, delay);
+items.forEach((item, index) => {
+    setTimeout(() => {
+        item.classList.remove('hidden');
+        item.classList.add('visible');
+    }, delay);
 
-        // Aumentar o delay para o próximo item
-        delay += 500; // 500ms de intervalo entre os itens
-    });
+    delay += 500; 
+});
 
-    document.getElementById('nitrogenio').value = '';
-    document.getElementById('fosforo').value = '';
-    document.getElementById('potassio').value = '';
-    document.getElementById('eletrocondutividade').value = '';
-    document.getElementById('ph').value = '';
-    document.getElementById('temperatura').value = '';
-    document.getElementById('umidade').value = '';
-    // Exibir o resultado
-    });
+// Limpar os campos de entrada
+document.getElementById('nitrogenio').value = '';
+document.getElementById('fosforo').value = '';
+document.getElementById('potassio').value = '';
+document.getElementById('eletrocondutividade').value = '';
+document.getElementById('ph').value = '';
+document.getElementById('temperatura').value = '';
+document.getElementById('umidade').value = '';
+});
